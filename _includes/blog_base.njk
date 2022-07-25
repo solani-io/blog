@@ -1,0 +1,18 @@
+{% extends 'base.njk' %}
+
+{% block title %}
+    {% if title %} <title>{{title}}</title> {% endif %}
+{% endblock %}
+
+
+{% block header %}
+    {% if headerImage %}
+        <img class="blog__header__image" src="images/{{headerImage}}"/>
+    {% endif %}
+
+    {% if title %} <h1>{{title}}</h1> {% endif %}
+{% endblock %}
+
+{% block content %}
+    {{content | safe }}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% block content %}
+<ul class="bloglist__container">
+    {% for blog in collections.blogs %}
+        <li class="bloglist__item">
+            
+            <a href={{blog.url}} class="bloglist__item__title">{{blog.data.title}}</a>
+            
+            <p class="bloglist__item__author">By : {{blog.data.author}}</p>
+
+            <ul class="bloglist__item__tags">
+                {% for tag in blog.data.tags %}
+                <li class="bloglist__item__tags__tag">
+                    {{tag}}
+                </li>
+                {% endfor %}
+            </ul>
+        
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
